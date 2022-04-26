@@ -142,5 +142,101 @@ Sudo apt install openjdk-11-jdk
  sudo apt-get update
 
 sudo apt-get install jenkins
+ 
+ 
+ mahendra-
+ 1.remove git
+sudo apt-get remove --auto-remove git
+
+remove origin
+git remote rm origin
+
+2.install git
+sudo apt update
+sudo apt-get install git   // sudo apt install git
+git --version
+
+3. push git
+cd Desktop
+mkdir exam
+cd exam
+git init
+git config user.name "Mahendra"
+git config user.email "mahendra.dalaram18@siesgst.ac.in"
+git add .
+git remote add origin https://github.com/BelugaSr/test1.git
+git branch -M main
+git push -u origin main
+
+
+token - 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
+
+4. pull
+cd Desktop
+mkdir exam
+cd exam
+git init
+git remote add origin https://github.com/BelugaSr/test1.git
+git pull origin main
+
+5. to view history
+git log
+
+6. configure username
+git config user.name "Mahendra"
+git config user.email "mahendra.dalaram18@siesgst.ac.in"
+
+cd .git
+cat config
+
+git config --global user.name
+git config --global user.email
+
+
+7. install docker
+sudo apt  install docker.io
+docker --version
+sudo systemctl status docker  // check whether docker is enabled 
+sudo bash
+
+8.pull docker
+
+docker images
+docker pull ubuntu
+docker images 
+
+9. push docker 
+
+
+
+10. python app 
+
+docker images
+docker ps
+
+docker pull python
+docker images 
+
+mkdir sample_code
+cd sample_code
+nano app.py
+	print("Hello World")
+	
+nano dockerfile
+	FROM python
+	COPY . /src
+	CMD ["python","/src/app.py"]
+	
+docker build . -t python_app
+
+docker images
+docker -itd  python
+docker ps 
+docker commit <Python_container_id> py_app
+
+docker login
+docker images
+docker tag py_app:latest mahendra189/py_app
+docker push mahendra189/py_app
 
 
