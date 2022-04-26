@@ -11,7 +11,6 @@ is difficult to survive if the family is entirely dependent on this revenue. In
 this paper, we offer a model that addresses these concerns.
 
 
-
 Ansible installation:
 $ sudo apt update 
 $ sudo apt install software-properties-common 
@@ -81,6 +80,12 @@ Docker run hello-world //check if installation is done correctly or not
 Docker rm container id           //to remove container
 Docker rmi imageid              // to remove images
 
+
+sudo apt-get purge docker-engine  //uninstalling
+ sudo apt-get autoremove --purge docker-engine 
+rm -rf /var/lib/docker
+
+
 Docker Pull 
 Sudo bash
 Docker images
@@ -103,11 +108,10 @@ Exit
 (outside)
 Docker ps
 Docker commit <conatiner-id> new
-docker tag SOURCE_IMAGE[:TAG] dockerusername/TARGET_IMAGE[:TAG]
-Docker tag new:latest <username>/dickshant:pussy
+Docker tag new:latest  <username>/new
 Docker login
 Docker images
-Docker push <username>/dickshant:pussy
+Docker push  <username>/new
 
 
 Deploy
@@ -121,9 +125,12 @@ COPY . /src
 CMD ["python", "/src/app.py"]
 sudo bash
 docker build . -t python_app
+
+
 docker run python_app
 
 
+Docker run -itd python //container starting
 
 
 
@@ -142,6 +149,13 @@ Sudo apt install openjdk-11-jdk
  sudo apt-get update
 
 sudo apt-get install jenkins
+
+
+
+sudo apt-get remove --purge jenkins
+
+
+
  
  
  mahendra-
